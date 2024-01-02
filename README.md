@@ -1,4 +1,8 @@
-# Experiment--03-Half-Subtractor-and-Full-subtractor
+
+# NAME: RAMYA.P
+# REFERENCE NO:21223240137
+
+# Experiment--04-Half-Subtractor-and-Full-subtractor
 ## Implementation-of-Half-subtractor-and-Full-subtractor-circuit
 ## AIM:
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
@@ -18,6 +22,28 @@ The half-subtractor is a combinational circuit which is used to perform subtract
 Sum = X'Y+XY' = X ⊕ Y
 Carry=X'Y
 
+# PROGRAM:
+     module project_4_1(a,b,borrow,diff);
+     input a,b;
+     output borrow,diff;
+     assign borrow=~a&b;
+     assign diff=a^b;
+     endmodule
+# RTL realization:
+
+
+![291255631-24c991b9-2505-4e57-b23a-bc8d29030589](https://github.com/23014107/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/151625620/51d3d989-34b8-48ae-b202-c47dfea1912d)
+
+
+# Truth table:
+![291255700-bbe4f57d-e237-4d64-8829-d5f1d8eb7259](https://github.com/23014107/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/151625620/26e48f71-1ce3-4c14-98a1-8b0977228306)
+
+
+# Timing diagram:
+![291255810-452cb7d7-303b-4e75-8c5e-9c6d9a074c99](https://github.com/23014107/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/151625620/8b856650-dbce-452a-af66-5c427215005a)
+
+
+
 ## Full Subtractor
 A full subtractor is a combinational circuit that performs subtraction involving three bits, namely minuend, subtrahend, and borrow-in . It accepts three inputs: minuend, subtrahend and a borrow bit and it produces two outputs: difference and borrow. 
 ![full-subtractor6](https://user-images.githubusercontent.com/36288975/166112541-24c68359-3de8-4674-ae22-8272ffc385ed.png)
@@ -25,30 +51,28 @@ A full subtractor is a combinational circuit that performs subtraction involving
 
 Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
-## Procedure
-
-
-
-Write the detailed procedure here 
 
 
 ## Program:
-/*
-Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+ 
+    module project_4_2(a,b,bin,borrow,diff);
+    input a,b,bin;
+    output diff,borrow;
+    assign diff=(a^b)^bin;
+    assign borrow=((~a)&&bin)||(b&&bin)||((~a)&&b);
+    endmodule
+    
+# RTL REALIZATION:
 
-## Output:
+![291256368-8a12efe3-c86e-4800-a68f-c70a7befe09e](https://github.com/23014107/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/151625620/5750bd6f-6697-4d45-b5d7-9dc2c46a7529)
 
-## Truthtable
+# TRUTH TABLE:
 
+![291256384-531e58ee-f0b6-4146-b10e-5116dcf5f12f](https://github.com/23014107/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/151625620/838aefe2-dc9c-4e16-b6a2-9fee56dd5b58)
 
+# TIMING DIAGRAM:
 
-##  RTL realization
+![291256418-37e4998a-532a-4fd5-9411-3c5447e13330](https://github.com/23014107/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/151625620/68a28b07-158e-4de3-9a93-fc61ae581769)
 
-
-## Timing diagram 
-
-## Result:
+# RESULT:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
